@@ -1,5 +1,4 @@
 import createServer from 'server';
-import express, { Application, Request, Response, NextFunction } from 'express';
 
 const startServer = () => {
     const app = createServer();
