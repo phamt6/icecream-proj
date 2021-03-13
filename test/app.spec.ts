@@ -1,7 +1,7 @@
-const request = require('supertest');
-const { expect } = require('chai');
 
-const createServer = require('../src/server');
+import request from 'supertest';
+import createServer from 'server';
+
 const app = createServer();
 
 describe('server checks', () => {
