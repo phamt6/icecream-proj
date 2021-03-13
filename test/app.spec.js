@@ -1,7 +1,7 @@
 const request = require('supertest');
 const { expect } = require('chai');
 
-const createServer = require('../src/app');
+const createServer = require('../src/server');
 const app = createServer();
 
 describe('server checks', () => {
