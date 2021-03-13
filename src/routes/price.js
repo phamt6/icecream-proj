@@ -1,15 +1,12 @@
 const { Router } = require('express');
-
-const priceRoute = Router();
+const router = Router();
+const priceController = require('../controllers/price.controller');
 
 /**
  * @route POST /price
  * @desc pricing order according to user inputs
  * @access PUBLIC
  */
+router.post('/', priceController)
 
-priceRoute.post('/', (req, res) => {
-    res.status(200).send();
-})
-
-module.exports = priceRoute;
+module.exports = router;
