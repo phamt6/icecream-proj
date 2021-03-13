@@ -12,17 +12,23 @@ const createServer = () => {
     app.get('/api/v1', (req, res) => {
         res.status(200).send();
     });
-    
+
     app.post('/api/v1/price', (req, res) => {
         const orderService = new OrderService(req.body);
-        const orderObj = orderService.makeOrder();
-        res.status(200).json(orderObj)
+        try {
+            res.status(200).json(orderService.makeOrder());
+        }
+        catch (err) {
+            res.status(500).json({
+                err: err.message
+            });
+        }
     });
 
     app.get('*', (req, res) => {
         res.status(404).send();
     })
-    
+
     return app;
 }
 

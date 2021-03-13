@@ -2,7 +2,7 @@ const { expect } = require('chai');
 
 const OrderService = require('../src/services/OrderService');
 
-xdescribe('OrderService', () => {
+describe('OrderService', () => {
     it('should return correct result on correct inputs', (done) => {
         const mockData = {
             count: 150, 
@@ -21,6 +21,7 @@ xdescribe('OrderService', () => {
         };
 
         orderService = new OrderService(mockData);
-        expect(orderService.makeOrder()).to.deep.equal(expected);
+        expect(orderService.makeOrder()).to.eql(expected);
+        done();
     })
 })
